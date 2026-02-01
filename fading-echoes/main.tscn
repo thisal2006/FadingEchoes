@@ -4,6 +4,12 @@
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7dm0k"]
 
+[sub_resource type="BoxMesh" id="BoxMesh_ig7tw"]
+size = Vector3(20, 0.5, 20)
+
+[sub_resource type="BoxMesh" id="BoxMesh_0xm2m"]
+size = Vector3(20, 5, 0.5)
+
 [node name="Main" type="Node3D" unique_id=738557837]
 
 [node name="Player" type="CharacterBody3D" parent="." unique_id=1910383537]
@@ -15,3 +21,21 @@ shape = SubResource("CapsuleShape3D_7dm0k")
 [node name="Head" type="Node3D" parent="Player" unique_id=878386340]
 
 [node name="Camera3D" type="Camera3D" parent="Player/Head" unique_id=1405705929]
+
+[node name="floor" type="StaticBody3D" parent="." unique_id=429391323]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="floor" unique_id=560731456]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6612785, 0.6758119)
+mesh = SubResource("BoxMesh_ig7tw")
+
+[node name="WallFront" type="StaticBody3D" parent="." unique_id=838494055]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="WallFront" unique_id=935655287]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.38622808, -10.596018)
+mesh = SubResource("BoxMesh_0xm2m")
+
+[node name="wall2" type="StaticBody3D" parent="." unique_id=1461372101]
+
+[node name="wall3" type="StaticBody3D" parent="." unique_id=954222688]
+
+[node name="wall4" type="StaticBody3D" parent="." unique_id=377476824]
